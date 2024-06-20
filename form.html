@@ -28,12 +28,23 @@
 
         .instructions {
             color: #ffffff;
-            margin-top: 20px;
             font-size: 18px;
             grid-column: 2;
             border: 2px solid #ffffff;
             padding: 20px;
             border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .submission-count {
+            color: #ffffff;
+            font-size: 18px;
+            grid-column: 2;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffffff;
         }
 
         h1 {
@@ -41,6 +52,11 @@
             color: #333;
             margin-bottom: 30px;
             font-size: 28px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #ffffff;
         }
 
         .form-group {
@@ -70,6 +86,12 @@
         .form-group input[type="tel"]:focus {
             border-color: #0066cc;
             outline: none;
+        }
+
+        .form-group input[type="text"]:hover,
+        .form-group input[type="email"]:hover,
+        .form-group input[type="tel"]:hover {
+            background-color: #d3d3d3; /* Light grey */
         }
 
         .form-group input[type="submit"] {
@@ -121,6 +143,20 @@
         <h2>Form Instructions</h2>
         <p>Please fill out the form on the left with your contact information. Make sure all fields are completed before submitting the form. You must enter a valid email address or the form will not submit.</p>
     </div>
+    <div class="submission-count">
+        <h2>Submission Count</h2>
+        <p>Total submissions: <span id="submissionCount">0</span></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/submission-count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('submissionCount').textContent = data.count;
+                })
+                .catch(error => console.error('Error fetching submission count:', error));
+        });
+    </script>
 </body>
 </html>
-
