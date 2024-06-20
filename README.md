@@ -49,3 +49,10 @@ At this point everything is properly setup and the web page is live for anyone w
 
 I hope something inovative was learned :)
 
+# Suplementary features
+
+I have significantly improved the visual aspect of the code introducing other features that can be used with HTML such as "hover"
+
+Additionally I added a form submission counter so that when you make the form live it will continuously count how many people submitted the form. Be aware the counter resets when you take Ngrok offline which would make sense as you are practically removing your page off the internet. 
+
+- Feature to track submissions is stored in the back-end area using Flask which is already connected to my Google Sheet API so it makes sense as to why the new code has been added to the app.py file.
