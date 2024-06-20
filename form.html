@@ -6,49 +6,63 @@
     <title>Contact Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-color: #000000;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             height: 100vh;
             margin: 0;
             padding: 20px;
+            align-items: start;
+            gap: 20px;
         }
 
         .form-container {
             background-color: #ffffff;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 80%;
+            grid-column: 1;
+        }
+
+        .instructions {
+            color: #ffffff;
+            margin-top: 20px;
+            font-size: 18px;
+            grid-column: 2;
+            border: 2px solid #ffffff;
             padding: 20px;
-            width: 100%;
-            max-width: 400px;
+            border-radius: 10px;
         }
 
         h1 {
             text-align: center;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 28px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             color: #555;
+            font-size: 18px;
         }
 
         .form-group input[type="text"],
         .form-group input[type="email"],
         .form-group input[type="tel"] {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 15px;
+            border: 2px solid #000000;
             border-radius: 5px;
             box-sizing: border-box;
+            font-size: 16px;
         }
 
         .form-group input[type="text"]:focus,
@@ -64,8 +78,8 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 22px;
             width: 100%;
         }
 
@@ -80,7 +94,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Contact Form</h1>
+        <h1>User Contact Form</h1>
         <form action="/submit" method="post">
             <div class="form-group">
                 <label for="first_name">First Name:</label>
@@ -91,7 +105,7 @@
                 <input type="text" id="last_name" name="last_name" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
@@ -103,5 +117,10 @@
             </div>
         </form>
     </div>
+    <div class="instructions">
+        <h2>Form Instructions</h2>
+        <p>Please fill out the form on the left with your contact information. Make sure all fields are completed before submitting the form. You must enter a valid email address or the form will not submit.</p>
+    </div>
 </body>
 </html>
+
